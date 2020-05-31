@@ -444,7 +444,30 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+          <sonar.host.url>http://localhost:7000</sonar.host.url>        
+        </properties>
+      </profile>
    </profiles>
+    <distributionManagement>
+ <repository>
+ <id>z-releases</id>
+ <name>z-releases</name>
+ <url>http://localhost:8081/nexus/content/repositories/z-releases/</url>
+ <layout>default</layout>
+ </repository> 
+ <snapshotRepository>
+ <id>z-snapshots</id>
+ <name>z-snapshots</name>
+ <url>http://localhost:8081/nexus/content/repositories/z-snapshots/</url>
+ <layout>default</layout>    
+ </snapshotRepository>    
+</distributionManagement>
 
     <url>demopetclinic</url>
 </project>
